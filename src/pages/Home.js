@@ -4,6 +4,7 @@ import MovieCard from '../components/MovieCard'
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'
 import Loader from 'react-loader-spinner'
 import axios from 'axios'
+import AllMovies from '../pages/AllMovies'
 
 const Home = () => {
   const [data, setData] = useState([])
@@ -75,6 +76,7 @@ const Home = () => {
           </div>
         )}
       </div>
+      <AllMovies />
     </>
   )
 }
