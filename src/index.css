@@ -1,182 +1,181 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   background-color: #222532;
-  
 }
-body{
+body {
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
 }
-.mobile-navigation{
+.mobile-navigation {
   display: none;
 }
 .nav {
   z-index: 99;
 }
-.movie-image{
+.movie-image {
   overflow: hidden;
 }
-.movie-overview{
+.movie-overview {
   position: absolute;
   width: 100%;
   height: 100%;
-  color:azure;
-  padding:1rem;
+  color: azure;
+  padding: 1rem;
   overflow-y: hidden;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   transform: translateY(100%);
-  transition: transform .5s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
-.card-container:hover .movie-overview{
+.card-container:hover .movie-overview {
   transform: translateY(0%);
   background-color: whitesmoke;
   color: black;
 }
-.overview-content{
+.overview-content {
   background-color: whitesmoke;
   color: black;
 }
-.card-container{
+.card-container {
   position: relative;
 }
-.overview-title{
+.overview-title {
   font-size: 1rem;
   background-color: whitesmoke;
   color: black;
 }
-.overview-description{
-  font-size: .75rem;
+.overview-description {
+  font-size: 0.75rem;
   background-color: whitesmoke;
   color: black;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .navbar-nav {
     background-color: orangered;
   }
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     display: none;
   }
-  .movie-image{
+  .movie-image {
     overflow: hidden;
   }
-  .movie-overview{
-    color:azure;
+  .movie-overview {
+    color: azure;
     padding: 0;
   }
-  .overview-title{
-    font-size: .75rem;
-    padding-top: .25rem;
+  .overview-title {
+    font-size: 0.75rem;
+    padding-top: 0.25rem;
   }
-  .overview-description{
-    font-size: .5rem
+  .overview-description {
+    font-size: 0.5rem;
   }
-  
 }
-.navbar{
-  background-color:#222532;
+.navbar {
+  background-color: #222532;
   color: azure;
 }
 .navbar-brand-link {
   text-decoration: none;
   font-size: xx-large;
-  color:azure;
+  color: azure;
 }
-.navbar-brand-link:hover{
-  color:orangered;
+.navbar-brand-link:hover {
+  color: orangered;
 }
 .navbar-links {
   text-decoration: none;
 }
-.nav-link{
+.nav-link {
   border: 1px solid #222532;
 }
-.nav-link:hover{
+.nav-link:hover {
   border-bottom: 1px solid azure;
 }
-.nav-link a{
+.nav-link a {
   text-decoration: none;
   color: azure;
 }
-.nav-link a:hover{
+.nav-link a:hover {
   color: azure;
 }
-.hamburger-icon{
+.hamburger-icon {
   font-size: xx-large;
   justify-content: center;
 }
-.mobile-links{
+.mobile-links {
   font-size: small;
 }
 .form-control-borderless {
   border: none;
 }
-.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+.form-control-borderless:hover,
+.form-control-borderless:active,
+.form-control-borderless:focus {
   border: none;
   outline: none;
   box-shadow: none;
 }
-.control-dots{
+.control-dots {
   background-color: transparent;
 }
-.card-image-top{
+.card-image-top {
   height: 100%;
   width: 100%;
   object-fit: cover;
 }
-.carousel{
-display: flex;
-justify-content: center;
-height: 40vh;
-object-fit: scale-down;
-}
-.carousel-wrapper{
-height: 30%;
-width: auto;
-}
-.carousel-slide{
-height: 50vh;
-}  
-.carousel-image-container{
-height: 50%;
-}
-.carousel-slide img{
-max-width: auto;
-height: 100%;
-}
-.page-footer-container{
-background:#222532;
-position: fixed;
-bottom: 0;
-width: 100%;
-}
-.footer{
-color: whitesmoke;
-font-size:small;
-}
-
-@media only screen and (min-width: 992px) {
-.carousel{
+.carousel {
   display: flex;
   justify-content: center;
   height: 40vh;
-  object-fit: contain;
+  object-fit: scale-down;
 }
-.carousel-image-container{
+.carousel-wrapper {
+  height: 30%;
+  width: auto;
+}
+.carousel-slide {
+  height: 50vh;
+}
+.carousel-image-container {
   height: 50%;
 }
-.carousel-slide img{
+.carousel-slide img {
   max-width: auto;
   height: 100%;
 }
-.overview-description{
-  font-size: 8px;
-  font-weight: bold;
+.page-footer-container {
+  background: #222532;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.footer {
+  color: whitesmoke;
+  font-size: small;
 }
 
+@media only screen and (min-width: 992px) {
+  .carousel {
+    display: flex;
+    justify-content: center;
+    height: 40vh;
+    object-fit: contain;
+  }
+  .carousel-image-container {
+    height: 50%;
+  }
+  .carousel-slide img {
+    max-width: auto;
+    height: 100%;
+  }
+  .overview-description {
+    font-size: 8px;
+    font-weight: bold;
+  }
 }

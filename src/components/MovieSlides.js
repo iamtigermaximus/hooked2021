@@ -1,30 +1,43 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Carousel } from 'react-responsive-carousel';
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import { Carousel } from 'react-responsive-carousel'
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const MovieSlides = () => {
-  const [nowPlaying, setNowPlaying] = useState([]);
+  const [nowPlaying, setNowPlaying] = useState([])
 
-    useEffect(() => {
-        axios
-        .get("https://api.themoviedb.org/3/movie/now_playing?api_key=89112843133b22b96a96ab6de6cc8f5f&language=en-US&page=1")
-        .then(response =>{
-         setNowPlaying(response.data.results)
-        })
-    }, []);
+  useEffect(() => {
+    axios
+      .get(
+        'https://api.themoviedb.org/3/movie/now_playing?api_key=89112843133b22b96a96ab6de6cc8f5f&language=en-US&page=1'
+      )
+      .then((response) => {
+        setNowPlaying(response.data.results)
+      })
+  }, [])
   return (
-    <div className="container-fluid bg-dark p-2 d-flex justify-content-center pb-5">
-      <div className="carousel-wrapper">
-      <Carousel infiniteLoop useKeyboardArrows autoPlay showThumbs={false} showStatus={false}>
-        {nowPlaying.slice(0,12).map(movie=>(
-          <div key={movie.id} className="text-center carousel-image-container">
-            <img src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} alt="project"/>
-          </div>
+    <div className='container-fluid bg-dark p-2 d-flex justify-content-center pb-5'>
+      <div className='carousel-wrapper'>
+        <Carousel
+          infiniteLoop
+          useKeyboardArrows
+          autoPlay
+          showThumbs={false}
+          showStatus={false}
+        >
+          {nowPlaying.slice(0, 12).map((movie) => (
+            <div
+              key={movie.id}
+              className='text-center carousel-image-container'
+            >
+              <img
+                src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                alt='project'
+              />
+            </div>
           ))}
-      </Carousel>
-    </div>
+        </Carousel>
+      </div>
     </div>
   )
 }
