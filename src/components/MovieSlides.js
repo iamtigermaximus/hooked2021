@@ -5,16 +5,17 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const MovieSlides = () => {
   const [nowPlaying, setNowPlaying] = useState([])
+  const TMDB_API_KEY = process.env.TMDB_API_KEY
 
   useEffect(() => {
     axios
       .get(
-        'https://api.themoviedb.org/3/movie/now_playing?api_key=89112843133b22b96a96ab6de6cc8f5f&language=en-US&page=1'
+        `https://api.themoviedb.org/3/movie/now_playing?api_key=${TMDB_API_KEY}&language=en-US&page=1`
       )
       .then((response) => {
         setNowPlaying(response.data.results)
       })
-  }, [])
+  })
   return (
     <div className='container-fluid bg-dark p-2 d-flex justify-content-center pb-5'>
       <div className='carousel-wrapper'>
